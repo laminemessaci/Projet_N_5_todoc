@@ -1,5 +1,6 @@
 package com.cleanup.todoc.database;
 
+
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -63,6 +64,4 @@ public abstract class CleanUpDatabase extends RoomDatabase {
             }
         };
     }
-
-
 }

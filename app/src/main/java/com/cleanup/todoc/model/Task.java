@@ -86,6 +86,15 @@ public class Task {
         this.projectId = projectId;
     }
 
+
+    public long getProjectId() {
+        return projectId;
+    }
+
+    public long getCreationTimestamp() {
+        return creationTimestamp;
+    }
+
     /**
      * Returns the project associated to the task.
      *
@@ -95,6 +104,7 @@ public class Task {
     public Project getProject() {
         return Project.getProjectById(projectId);
     }
+
 
     /**
      * Returns the name of the task.
