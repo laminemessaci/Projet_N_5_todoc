@@ -24,6 +24,7 @@ Mise en ligne :
 
 ### Outils et technologies utilisés
   - **Trello  :** gestion du projet en ligne l ien--> https://trello.com/b/bsBi3g4Y/projet-n5-todoc
+  - **ArgoUML
   - **Draw.io :** dessin de diagramme en ligne
   - **MySQL Workbench:** realisation de MDP
   - **Android Strudio :** Environnement de Développement Intégré (IDE)
