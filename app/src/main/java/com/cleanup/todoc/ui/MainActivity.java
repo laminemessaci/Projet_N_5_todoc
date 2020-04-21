@@ -320,4 +320,6 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
          */
         NONE
     }
+
+
 }
