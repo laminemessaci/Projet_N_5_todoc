@@ -4,40 +4,40 @@ le projet 5 du parcours DA Android d'OpenClassrooms.
 
 ## Introduction
 
-**Todoc** est une application de gestion de tâches pour faciliter le 
-travail de ses collaborateurs d'une société de nettoyage de locaux 
+**Todoc** est une application de gestion de tÃ¢ches pour faciliter le 
+travail de ses collaborateurs d'une sociÃ©tÃ© de nettoyage de locaux 
 commerciaux.  
 
-L'application est en partie réalisée. Il ne manque que la persistance 
-des données puis la mise en production.  
+L'application est en partie rÃ©alisÃ©e. Il ne manque que la persistance 
+des donnÃ©es puis la mise en production.  
 
-## Travail a réaliser
+## Travail a rÃ©aliser
 
-Implémentation :  
+ImplÃ©mentation :  
 
-  - gérer la persistance des données
+  - gÃ©rer la persistance des donnÃ©es
 
 Mise en ligne :  
 
-  - déployer l'application sur le PlayStore en mode "bêta" (release, 
+  - dÃ©ployer l'application sur le PlayStore en mode "bÃªta" (release, 
    obfuscation du code source et APK)
 
-### Outils et technologies utilisés
+### Outils et technologies utilisÃ©s
   - **Trello  :** gestion du projet en ligne l ien--> https://trello.com/b/bsBi3g4Y/projet-n5-todoc
   - **ArgoUML
   - **Draw.io :** dessin de diagramme en ligne
   - **MySQL Workbench:** realisation de MDP
-  - **Android Strudio :** Environnement de Développement Intégré (IDE)
-  - **Java :** langage de développement utilisé (contrainte projet)
-  - **Git :** gestionnaire de version de code source décentralisé
-  - **GitHub :** forge logiciel (dépôt de code source, bugtracker ... 
+  - **Android Strudio :** Environnement de DÃ©veloppement IntÃ©grÃ© (IDE)
+  - **Java :** langage de dÃ©veloppement utilisÃ© (contrainte projet)
+  - **Git :** gestionnaire de version de code source dÃ©centralisÃ©
+  - **GitHub :** forge logiciel (dÃ©pÃ´t de code source, bugtracker ... 
   - contrainte projet)
 
 ### Planification du travail
 
-Développement de la nouvelle fonctionnalité :  
+DÃ©veloppement de la nouvelle fonctionnalitÃ© :  
 
-  - **v0.2 :** gestion de la persistance des données
+  - **v0.2 :** gestion de la persistance des donnÃ©es
 
 Mise en ligne :  
 
@@ -46,32 +46,32 @@ Mise en ligne :
 
 ### Mon organisation
 
-La partie développement :  
+La partie dÃ©veloppement :  
 
   - analyse de l'existant
-  - pour l'ajout de la fonctionnalité v0.2 :
+  - pour l'ajout de la fonctionnalitÃ© v0.2 :
     - analyse et conception:
     ![final_architecture_todoc](https://user-images.githubusercontent.com/60298344/79697002-5fa07f00-8280-11ea-9c78-d68d5c706cf4.png)
 
-    - implémentation
-    - implémentation des tests unitaires et instrumentaux
-    - tests et validation (exécution des nouveaux tests et des 
-    précédants)
-    - release (documenter et versionner la nouvelle fonctionnalité)
+    - implÃ©mentation
+    - implÃ©mentation des tests unitaires et instrumentaux
+    - tests et validation (exÃ©cution des nouveaux tests et des 
+    prÃ©cÃ©dants)
+    - release (documenter et versionner la nouvelle fonctionnalitÃ©)
   - test et validation global (tests unitaires, instrumentaux et 
   utilisateurs)
 
 La partie mise en ligne :  
 
-  - se documenter et obtenir les prérequis
-  - réalisation
+  - se documenter et obtenir les prÃ©requis
+  - rÃ©alisation
 
 ### Livrables
 
-  - le code source de l'application, l'APK signé ainsi que l'adresse de 
-  dépôt GitHub correspondant
-  - le modèle relationnel (MPD) de la base de données SQL 
-  - les rapports d'exécution (unitaire et instrumentalisé) des tests 
-  finaux (qui doivent indiquer que les tests réussissent) au format HTML
+  - le code source de l'application, l'APK signÃ© ainsi que l'adresse de 
+  dÃ©pÃ´t GitHub correspondant
+  - le modÃ¨le relationnel (MPD) de la base de donnÃ©es SQL 
+  - les rapports d'exÃ©cution (unitaire et instrumentalisÃ©) des tests 
+  finaux (qui doivent indiquer que les tests rÃ©ussissent) au format HTML
 
 
