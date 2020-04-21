@@ -24,8 +24,9 @@ Mise en ligne :
 
 ### Outils et technologies utilisés
   - **Trello  :** gestion du projet en ligne l ien--> https://trello.com/b/bsBi3g4Y/projet-n5-todoc
+  - **ArgoUML
   - **Draw.io :** dessin de diagramme en ligne
-  - **MySQL Workbench
+  - **MySQL Workbench:** realisation de MDP
   - **Android Strudio :** Environnement de Développement Intégré (IDE)
   - **Java :** langage de développement utilisé (contrainte projet)
   - **Git :** gestionnaire de version de code source décentralisé
@@ -50,7 +51,8 @@ La partie développement :
   - analyse de l'existant
   - pour l'ajout de la fonctionnalité v0.2 :
     - analyse et conception:
-     ![final_architecture_todoc](https://user-images.githubusercontent.com/60298344/79697002-5fa07f00-8280-11ea-9c78-d68d5c706cf4.png)
+    ![final_architecture_todoc](https://user-images.githubusercontent.com/60298344/79697002-5fa07f00-8280-11ea-9c78-d68d5c706cf4.png)
+
     - implémentation
     - implémentation des tests unitaires et instrumentaux
     - tests et validation (exécution des nouveaux tests et des 
