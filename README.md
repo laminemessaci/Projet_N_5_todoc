@@ -1,4 +1,4 @@
-# Projet_N_5_todoc
+﻿# Projet_N_5_todoc
 
 le projet 5 du parcours DA Android d'OpenClassrooms.  
 
@@ -24,7 +24,7 @@ Mise en ligne :
 
 ### Outils et technologies utilisés
   - **Trello  :** gestion du projet en ligne l ien--> https://trello.com/b/bsBi3g4Y/projet-n5-todoc
-  - **ArgoUML
+  - **ArgoUML :** Diagramme de classes
   - **Draw.io :** dessin de diagramme en ligne
   - **MySQL Workbench:** realisation de MDP
   - **Android Strudio :** Environnement de Développement Intégré (IDE)
