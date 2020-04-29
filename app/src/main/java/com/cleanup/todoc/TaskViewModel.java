@@ -24,6 +24,7 @@ public class TaskViewModel extends ViewModel {
     // PROJECTS
     private LiveData<List<Project>> projects;
 
+
     public TaskViewModel(TaskDataRepository taskDataSource, ProjectDataRepository projectDataSource, Executor executor) {
         this.taskDataSource = taskDataSource;
         this.projectDataSource = projectDataSource;
@@ -45,22 +46,13 @@ public class TaskViewModel extends ViewModel {
     }
 
     public void createTask(final Task task) {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                taskDataSource.createTask(task);
-            }
-        });
+        executor.execute(() -> taskDataSource.createTask(task));
     }
 
-    public void deleteTask(final long taskId) {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                taskDataSource.deleteTask(taskId);
-            }
-        });
+    public void deleteTask(final Task task) {
+        executor.execute(() -> taskDataSource.deleteTask(task));
     }
+
 
     public void init() {
         if (projects == null) {

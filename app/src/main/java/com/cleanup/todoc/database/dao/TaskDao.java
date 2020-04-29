@@ -2,6 +2,7 @@ package com.cleanup.todoc.database.dao;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
@@ -25,4 +26,6 @@ public interface TaskDao {
 
     @Query("DELETE FROM Task WHERE id = :id")
     int deleteTask(long id);
+    @Delete
+    void deleteTask(Task task);
 }

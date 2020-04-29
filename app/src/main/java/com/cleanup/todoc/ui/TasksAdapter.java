@@ -129,13 +129,10 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
             lblProjectName = itemView.findViewById(R.id.lbl_project_name);
             imgDelete = itemView.findViewById(R.id.img_delete);
 
-            imgDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    final Object tag = view.getTag();
-                    if (tag instanceof Task) {
-                        TaskViewHolder.this.deleteTaskListener.onDeleteTask((Task) tag);
-                    }
+            imgDelete.setOnClickListener(view -> {
+                final Object tag = view.getTag();
+                if (tag instanceof Task) {
+                    TaskViewHolder.this.deleteTaskListener.onDeleteTask((Task) tag);
                 }
             });
         }

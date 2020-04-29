@@ -25,5 +25,5 @@ public class TaskDataRepository {
     public void createTask(Task task){ taskDao.insertTask(task); }
 
     // --- DELETE TASK ---
-    public void deleteTask(long taskId){ taskDao.deleteTask(taskId); }
+    public void deleteTask(Task task){ taskDao.deleteTask(task); }
 }
