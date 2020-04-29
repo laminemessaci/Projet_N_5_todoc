@@ -13,6 +13,7 @@ import java.util.concurrent.Executors;
  * Created by Lamine MESSACI on 21/04/2020.
  */
 public class Injection {
+
     private static TaskDataRepository provideTaskDataSource(Context context) {
         CleanUpDatabase database = CleanUpDatabase.getInstance(context);
         return new TaskDataRepository(database.taskDao());
