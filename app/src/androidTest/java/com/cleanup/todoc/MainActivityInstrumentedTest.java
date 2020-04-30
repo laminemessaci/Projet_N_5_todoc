@@ -38,6 +38,7 @@ public class MainActivityInstrumentedTest {
         MainActivity activity = rule.getActivity();
         TextView lblNoTask = activity.findViewById(R.id.lbl_no_task);
         RecyclerView listTasks = activity.findViewById(R.id.list_tasks);
+        int count = listTasks.getAdapter().getItemCount();
 
         onView(withId(R.id.fab_add_task)).perform(click());
         onView(withId(R.id.txt_task_name)).perform(replaceText("Tâche example"));
@@ -47,20 +48,29 @@ public class MainActivityInstrumentedTest {
         assertThat(lblNoTask.getVisibility(), equalTo(View.GONE));
         // Check that recyclerView is displayed
         assertThat(listTasks.getVisibility(), equalTo(View.VISIBLE));
-        // Check that it contains one element only
-        assertThat(listTasks.getAdapter().getItemCount(), equalTo(1));
+        // Check that it contains count + 1
+        assertThat(listTasks.getAdapter().getItemCount(), equalTo(count +1));
 
-        onView(withId(R.id.img_delete)).perform(click());
+        //onView(withId(R.id.img_delete)).perform(click());
 
         // Check that lblTask is displayed
-        assertThat(lblNoTask.getVisibility(), equalTo(View.VISIBLE));
+      //  assertThat(lblNoTask.getVisibility(), equalTo(View.VISIBLE));
         // Check that recyclerView is not displayed anymore
-        assertThat(listTasks.getVisibility(), equalTo(View.GONE));
+        //assertThat(listTasks.getVisibility(), equalTo(View.GONE));
+
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(0, R.id.img_delete))
+                .perform(click());
+
+        assertThat(listTasks.getAdapter().getItemCount(), equalTo(count));
+
+
     }
 
     @Test
     public void sortTasks() {
         MainActivity activity = rule.getActivity();
+        RecyclerView listTasks = activity.findViewById(R.id.list_tasks);
+        int count = listTasks.getAdapter().getItemCount();
 
         onView(withId(R.id.fab_add_task)).perform(click());
         onView(withId(R.id.txt_task_name)).perform(replaceText("aaa Tâche example"));
@@ -72,11 +82,11 @@ public class MainActivityInstrumentedTest {
         onView(withId(R.id.txt_task_name)).perform(replaceText("hhh Tâche example"));
         onView(withId(android.R.id.button1)).perform(click());
 
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(0, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+1, R.id.lbl_task_name))
                 .check(matches(withText("aaa Tâche example")));
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(1, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+2, R.id.lbl_task_name))
                 .check(matches(withText("zzz Tâche example")));
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(2, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+3, R.id.lbl_task_name))
                 .check(matches(withText("hhh Tâche example")));
 
         // Sort alphabetical
@@ -118,5 +128,7 @@ public class MainActivityInstrumentedTest {
                 .check(matches(withText("zzz Tâche example")));
         onView(withRecyclerView(R.id.list_tasks).atPositionOnView(2, R.id.lbl_task_name))
                 .check(matches(withText("aaa Tâche example")));
+
+
     }
 }
