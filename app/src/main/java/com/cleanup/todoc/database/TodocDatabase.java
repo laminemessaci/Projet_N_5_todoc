@@ -22,9 +22,9 @@ import static com.cleanup.todoc.model.Project.getAllProjects;
  */
 
 @Database(entities = {Task.class, Project.class}, version = 1, exportSchema = false)
-public abstract class CleanUpDatabase extends RoomDatabase {
+public abstract class TodocDatabase extends RoomDatabase {
     // --- SINGLETON ---
-    private static volatile CleanUpDatabase INSTANCE;
+    private static volatile TodocDatabase INSTANCE;
     private static String DBNAME = "todoc";
 
     // --- DAO ---
@@ -32,12 +32,12 @@ public abstract class CleanUpDatabase extends RoomDatabase {
     public abstract ProjectDao projectDao();
 
     // --- INSTANCE ---
-    public static synchronized CleanUpDatabase getInstance(Context context) {
+    public static synchronized TodocDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            synchronized (CleanUpDatabase.class) {
+            synchronized (TodocDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            CleanUpDatabase.class, DBNAME)
+                            TodocDatabase.class, DBNAME)
                             .addCallback(prepopulateDatabase())
                             .build();
                 }

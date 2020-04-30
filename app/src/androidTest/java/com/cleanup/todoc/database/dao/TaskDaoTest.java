@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.cleanup.todoc.database.CleanUpDatabase;
+import com.cleanup.todoc.database.TodocDatabase;
 import com.cleanup.todoc.model.Project;
 import com.cleanup.todoc.model.Task;
 import com.cleanup.todoc.utils.LiveDataTestUtil;
@@ -25,7 +25,7 @@ import static org.junit.Assert.*;
 public class TaskDaoTest {
 
     // FOR DATA
-    private CleanUpDatabase database;
+    private TodocDatabase database;
 
     @Rule
     public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();
@@ -33,7 +33,7 @@ public class TaskDaoTest {
     @Before
     public void initDb() throws Exception {
         this.database = Room.inMemoryDatabaseBuilder(InstrumentationRegistry.getContext(),
-                CleanUpDatabase.class)
+                TodocDatabase.class)
                 .allowMainThreadQueries()
                 .build();
         this.database.projectDao().createProject(PROJECT_DEMO);

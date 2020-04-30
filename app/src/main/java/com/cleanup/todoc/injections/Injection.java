@@ -2,7 +2,7 @@ package com.cleanup.todoc.injections;
 
 import android.content.Context;
 
-import com.cleanup.todoc.database.CleanUpDatabase;
+import com.cleanup.todoc.database.TodocDatabase;
 import com.cleanup.todoc.repositories.ProjectDataRepository;
 import com.cleanup.todoc.repositories.TaskDataRepository;
 
@@ -15,12 +15,12 @@ import java.util.concurrent.Executors;
 public class Injection {
 
     private static TaskDataRepository provideTaskDataSource(Context context) {
-        CleanUpDatabase database = CleanUpDatabase.getInstance(context);
+        TodocDatabase database = TodocDatabase.getInstance(context);
         return new TaskDataRepository(database.taskDao());
     }
 
     private static ProjectDataRepository provideProjectDataSource(Context context) {
-        CleanUpDatabase database = CleanUpDatabase.getInstance(context);
+        TodocDatabase database = TodocDatabase.getInstance(context);
         return new ProjectDataRepository(database.projectDao());
     }
 
