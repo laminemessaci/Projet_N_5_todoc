@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -73,20 +74,20 @@ public class MainActivityInstrumentedTest {
         int count = listTasks.getAdapter().getItemCount();
 
         onView(withId(R.id.fab_add_task)).perform(click());
-        onView(withId(R.id.txt_task_name)).perform(replaceText("aaa Tâche example"));
+        onView(withId(R.id.txt_task_name)).perform(clearText(),replaceText("aaa Tâche example"));
         onView(withId(android.R.id.button1)).perform(click());
         onView(withId(R.id.fab_add_task)).perform(click());
-        onView(withId(R.id.txt_task_name)).perform(replaceText("zzz Tâche example"));
+        onView(withId(R.id.txt_task_name)).perform(clearText(),replaceText("zzz Tâche example"));
         onView(withId(android.R.id.button1)).perform(click());
         onView(withId(R.id.fab_add_task)).perform(click());
-        onView(withId(R.id.txt_task_name)).perform(replaceText("hhh Tâche example"));
+        onView(withId(R.id.txt_task_name)).perform(clearText(),replaceText("hhh Tâche example"));
         onView(withId(android.R.id.button1)).perform(click());
 
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+1, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count, R.id.lbl_task_name))
                 .check(matches(withText("aaa Tâche example")));
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+2, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+1, R.id.lbl_task_name))
                 .check(matches(withText("zzz Tâche example")));
-        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+3, R.id.lbl_task_name))
+        onView(withRecyclerView(R.id.list_tasks).atPositionOnView(count+2, R.id.lbl_task_name))
                 .check(matches(withText("hhh Tâche example")));
 
         // Sort alphabetical
