@@ -28,4 +28,6 @@ public interface TaskDao {
     int deleteTask(long id);
     @Delete
     void deleteTask(Task task);
+
+
 }
