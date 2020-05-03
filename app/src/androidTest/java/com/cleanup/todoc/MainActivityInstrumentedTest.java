@@ -105,7 +105,6 @@ public class MainActivityInstrumentedTest {
     @Test
     public void sortTasks() {
         MainActivity activity = rule.getActivity();
-        TextView lblNoTask = activity.findViewById(R.id.lbl_no_task);
         RecyclerView listTasks = activity.findViewById(R.id.list_tasks);
         int count = listTasks.getAdapter().getItemCount();
         if(count > 0){
