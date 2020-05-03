@@ -10,12 +10,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.cleanup.todoc.database.dao.ProjectDao;
-import com.cleanup.todoc.database.dao.TaskDao;
-import com.cleanup.todoc.model.Project;
-import com.cleanup.todoc.model.Task;
-
-import static com.cleanup.todoc.model.Project.getAllProjects;
 
 /**
  * Created by Lamine MESSACI on 15/04/2020.
