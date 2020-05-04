@@ -31,18 +31,21 @@ public abstract class TodocDatabase extends RoomDatabase {
     // --- DAO ---
     public abstract TaskDao taskDao();
     public abstract ProjectDao projectDao();
+    public static boolean isProduction = true;
 
     // --- INSTANCE ---
     public static synchronized TodocDatabase getInstance(Context context) {
-        if (INSTANCE == null) {
-            synchronized (TodocDatabase.class) {
-                if (INSTANCE == null) {
+        if(INSTANCE == null) {
+            synchronized(TodocDatabase.class) {
+                if(INSTANCE == null) {
+
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             TodocDatabase.class, DBNAME)
                             .addCallback(prepopulateDatabase())
                             .build();
                 }
             }
+
         }
         return INSTANCE;
     }
