@@ -24,6 +24,7 @@ import static com.cleanup.todoc.model.Project.getAllProjects;
 
 @Database(entities = {Task.class, Project.class}, version = 1, exportSchema = false)
 public abstract class TodocDatabase extends RoomDatabase {
+
     // --- SINGLETON ---
     private static volatile TodocDatabase INSTANCE;
     private static String DBNAME = "todoc";
@@ -31,7 +32,6 @@ public abstract class TodocDatabase extends RoomDatabase {
     // --- DAO ---
     public abstract TaskDao taskDao();
     public abstract ProjectDao projectDao();
-    public static boolean isProduction = true;
 
     // --- INSTANCE ---
     public static synchronized TodocDatabase getInstance(Context context) {
@@ -45,7 +45,6 @@ public abstract class TodocDatabase extends RoomDatabase {
                             .build();
                 }
             }
-
         }
         return INSTANCE;
     }
